@@ -8,7 +8,7 @@ import dontshare_config as ds
 
 ticker = 'BTCUSDT' #future non va la barra(BTCUSDT), spot si (BTC/USDT) 
 
-exchange = ccxt.binance({
+exchange = ccxt.binanceusdm({
     'apiKey' : '' ,
     'secret' : '' , 
     'enableRateLimit' : True ,
