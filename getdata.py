@@ -7,7 +7,7 @@ ticker = 'BTCUSDT' #future = 'BTCUSDT', spot = 'BTC/USDT'
 timeframe = '1m'
 limit = 4320 #3 days
 
-exchange = ccxt.binance({
+exchange = ccxt.binanceusdm({
     'apiKey' : '' ,
     'secret' : '' , 
     'enableRateLimit' : True ,
