@@ -56,18 +56,21 @@ def selllimit(symbol, qty, sl, tp):
 #set sl e tp
 entryprice = np.where((df.openposition ==1 | df.openposition == 2), open, 0))
 
-stoploss = entry * (1-(sl_perc/100))
-takeprofit = entry * (1+(tp_perc/100))
+
+stoplosslong = entry * (1-(sl_perc/100))
+takeprofitlong = entry * (1+(tp_perc/100))
+stoplossshort = entry * (1+(sl_perc/100))
+takeprofitshort = entry * (1-(tp_perc/100))
 
 
 #open positions
 while True:
     if df.open_position == 1:
-        buymarket(ticker, quantity, stoploss, takeprofit)
+        buymarket(ticker, quantity, stoplosslong, takeprofitlong)
         time.sleep(0.5)
 
 
     if df.open_position == 2:
         
-        sellmarket(ticker, quantity, stoploss, takeprofit)
+        sellmarket(ticker, quantity, stoplossshort, takeprofitshort)
         time.sleep(0.5)
